@@ -1,0 +1,38 @@
+entero i, j, num;
+decimal dec;
+palabra nom;
+logico ban = falso;
+
+nulo ordena() {
+    entero n, tmp;
+    imprime("Cuantos valores: ");
+    lee(n);
+    entero vec[n];
+    desde(i=0; i < n; i=i+1) {
+        imprime("vec[", i, "]: ");
+        lee(vec[i]);
+    }
+    desde(i=0; i< n - 1; i=i+1)
+       desde(j=i; j<n; j=j+1)
+          si(vec[i]<vec[j]) {
+            tmp = vec[i];
+            vec[i]=vec[j];
+            vec[j]=tmp;
+          }
+       
+}
+entero facRec(entero x) {      //Funcion Factorial Recursiva
+    si (x == 0 o x == 1) regresa x;
+    sino regresa x*facRec(x - 1);
+}
+
+nulo principal() {
+    imprimenl("Ejecutando programa...");
+    ordena();
+    imprime("Dame numero: ");
+    lee(num);
+    imprimenl("El Factorial(", num, ")=", facRec(num));
+    imprime("Cual es tu nombre: ");
+    lee(nom);
+    imprime("Hola ", nom, "Ya pasaste Lenguajes Traductores!!");
+}
